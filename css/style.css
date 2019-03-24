@@ -1,0 +1,313 @@
+body{
+	font-family: 'Meiryo', sans-serif;
+	margin: 0;
+}
+
+.main-header{
+	background-color: 
+}
+
+.logo{
+	background-color: #32618D;
+	text-align: center;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.social{
+	position: absolute;
+	top: 40px;
+	right: 30px;
+	font-size: 28px;
+
+}
+
+.social a{
+	color: #8D9EBE;
+	text-decoration: none;
+	margin-right: 10px;
+}
+.main-menu{
+	text-align: center;
+	background: #50508F;
+	color: white;
+
+}
+
+.main-menu #login{
+	text-align: left;
+	list-style-type: none;
+
+}
+
+.main-menu ul{
+	list-style: none;
+	margin: 0;
+	padding-bottom: 20px;
+}
+
+.main-menu ul li{
+	display: inline-block;
+	margin: 5px 10px;
+	padding-left: 55px;
+	color: white;
+	padding-top: 20px;
+
+}
+
+.main-menu ul li a{
+	font-weight: 700;
+	text-decoration: none;
+	
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	transition: all 0.2s ease-in;
+	color: white;
+}
+
+.main-menu ul li a:hover{
+
+	color: #8DABC2;
+	border-bottom: 2px solid #8DABC2;
+}
+
+.slider img {
+	width: 100%;
+
+}
+
+.card {
+	width: 30%;
+	border: 1px solid  #d6d2d2;
+	border-radius: 5px;
+	overflow: hidden;
+	
+}
+
+.card-hero img{
+	width: 100%;
+	
+}
+.card-hero {
+	position: relative;
+
+}
+
+.container{
+	max-width: 1170px;
+	overflow: hidden;
+	margin: 0 auto;
+	
+}
+
+.contact .container{
+	display: flex;
+	justify-content: space-around;
+}
+
+.oferta-academica .container{
+	display: flex;
+	justify-content: space-around;
+}
+
+.title-section {
+	text-align: center;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.title-oferta-academica{
+	color: #32618D;
+}
+
+.btn-card-show {
+	display: none;
+	background-color: #FFB606;
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	padding-top: 10px;
+	position: absolute;
+	padding-bottom: 10px;
+	top: 50%;
+	left: 50%;
+	margin-top: -10px;
+	margin-left: -50px;
+
+}
+
+
+.btn-card-show:hover{
+	background-color: #e0a006;
+
+}
+
+.card-hero:hover .btn-card-show{
+	display: block;
+}
+
+.card-title{
+	text-align: center;
+}
+
+.card-title::after{
+	content: '';
+	background-color: #1CA311;
+	height: 1px;
+	width: 70%;
+	margin: 0 auto;
+	display: block;
+	margin-top: 5px;
+}
+
+.card-list {
+	list-style: none;
+	padding-left: 0;
+	text-align: center;
+	color: #999999;
+
+}
+
+.card-list li{
+	padding-bottom: 5px;
+}
+
+.title-contact{
+	color: white;
+	background-color: #8DABC2;
+
+}
+
+.img-contact{
+	margin: 0;
+
+}
+.img-contact img{
+	width: 100%;
+}
+
+.contact-form{
+	display: flex;
+	flex-direction: column;
+	padding: 0 20px 30px;
+	width: 30%;
+	
+}
+
+.contact-form input[type="text"]{
+	display: block;
+}
+
+.form-control {
+	width: 100%;
+	margin:  7px 0;
+	padding: 7px 0;
+	border-radius: 5px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+}
+
+.btn-contact{
+	background-color: #32618D;
+	color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 15px;
+	border-radius: 5px;
+}
+
+.footer{
+	background-color: #32618D;
+	color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 12px;
+	text-align: right;
+	margin-top: 20px;
+}
+
+@media screen and (max-width: 1200px){
+	body{
+		
+	}
+}
+
+@media screen and (max-width: 768px){
+	body{
+		
+	}
+	.header {
+		display: flex;
+		flex-direction: column;
+	}
+	.logo{
+		order: 2;
+	}
+	.social{
+		background-color: #32618D;
+		position: initial;
+		display: flex;
+		justify-content: flex-end;
+		order: 1;
+		padding-top: 10px;
+		padding-right: 20px;
+
+	}
+	.main-menu{
+		order: 3;
+	}
+	.main-menu ul li{
+		display: block;
+		padding: 5px;
+	}
+	.slider img {
+		width: 100%;
+	}
+	.card {
+		box-sizing: border-box;
+		width: 45%;
+		margin-bottom: 15px;
+
+	}
+	.oferta-academica .container{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 0 15px;
+		
+	}
+	.contact .container{
+		display: flex;
+		flex-direction: column;
+	}
+	.form-control {
+	width: 100%;
+	margin:  7px 0;
+	padding: 7px 0;
+	border-radius: 5px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	width: 100%
+}
+
+}
+
+@media screen and (max-width: 480px){
+	body{
+		background-color: pink;
+		
+	}
+
+	
+	.card {
+		width: 100%
+	}
+	
+}
+
+@media screen and (max-width: 320px){
+	
+}
