@@ -1,3 +1,5 @@
+
+
 body{
 	font-family: 'Meiryo', sans-serif;
 	margin: 0;
@@ -18,6 +20,8 @@ body{
 #login a:link{ 
 text-decoration:none; 
 } 
+
+
 #login a:visited {
 	color: white;
 	display: none;
@@ -74,11 +78,23 @@ text-decoration:none;
 	color: #8DABC2;
 	border-bottom: 2px solid #8DABC2;
 }
+.container {
+    margin: 0 auto;
+    max-width: 80em;
+   visibility: hidden;
+   font-size: 1px;
+
+
+}
+.container ul li{
+	display: inline-block;
+}
+
 
 /*CSS login*/
 .login {
 	background: white;
-	margin: 30px 30px;
+	margin: 0px 30px;
 }
 .login ul li{
 	text-align: center;
@@ -111,11 +127,14 @@ text-decoration:none;
 
 /*CSS login*/
 
-/*CSS responsivo*/
-@media only screen and (min-width: 600px) {
 
-	.main-menu{
-		
-	}
+
+
+
+
+/*CSS responsivo*/
+@media only screen and (max-width: 600px) {
+
+
 }
 /*CSS responsivo*/
