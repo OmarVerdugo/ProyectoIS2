@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<title>Iniciar Sesión</title>
+<title>UABCS</title>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -31,22 +31,3 @@
            </nav>
   </header>
   
-  <section class="login">
-				<form class="panelLogin" action="login.php" method="POST">
-				<div class="iniciarSesion">
-					<ul>
-						<li><h3 class="lab">Iniciar Sesión</h3></li>
-						<li><input class="campo" type="text" name="email" placeholder="Correo:" size="32"></li>
-						<li><input class="campo" type="password" name="password" placeholder="Contraseña:" size="32"></li>
-						<li><button class="btnIniciar">Iniciar</button></li>
-					</ul>
-				</div>
-			</form>
-	</section>
-
-
-
-</body>
-
-
-</html>
