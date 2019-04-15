@@ -1,3 +1,15 @@
+
+<?php /*
+***********************************************************************
+Nombre del proyecto: Apliacion web, historia de las computadoras
+Descripción:    Página web educativa acerca de la historia de las computadoras
+Autores:  Morales Inzunza Jose R., Verdugo Amcriz Omar D.
+Versión:    1.00 lanzada el 25 de Abril de 2019
+Institución:    Universidad Autónoma de Baja California Sur
+Lugar:      La Paz, México
+**********************************************************************
+*/ ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,7 +31,8 @@
 <body>
   <header class="main-header">
            <nav class="main-menu">
-            <li id="login"><a href="#">Iniciar Sesión</a></li>
+            <?php  ?>
+            <li id="login"><a href="#">Iniciar Sesión (placeholder) </a></li>
            	<ul>
            		<li><a href="#">INICIO</a></li>
            		<li><a href="#">CAPÍTULOS</a></li>
