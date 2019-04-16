@@ -1,0 +1,36 @@
+
+/*CSS login*/
+.login {
+	background: white;
+	margin: 0px 30px;
+}
+.login ul li{
+	text-align: center;
+	list-style: none;
+}
+
+.panelLogin{
+	padding-top: 60px;
+	height: 430px;
+}
+
+.campo{
+	  	-moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        border: 1px solid #000000;
+        padding: 0 4px 0 4px;
+        font-size: 20px;
+        margin-bottom: 20px;
+
+}
+.btnIniciar{
+	color: white;
+	font-size: 20px;
+	width: 150px;
+	height: 40px;
+	background-color: #50508f;
+	border: 1px solid #000000;
+}
+
+/*CSS login*/
