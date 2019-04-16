@@ -1,6 +1,7 @@
 <?php include('template/header.php'); ?>
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="css/controlAlu.css">
 		<meta charset="utf-8">
 		<title>Modificar Alumno</title>
 	</head>
