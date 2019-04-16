@@ -22,8 +22,8 @@
            	<ul>
            		<li><a href="start.php">INICIO</a></li>
            		<li><a href="#">CAPÍTULOS</a></li>
-           		<li><a href="#">EVALUACIONES</a></li>
-           		<li><a href="#">JUEGOS</a></li>
+           		<li><a href="Evaluaciones.php">EVALUACIONES</a></li>
+           		<li><a href="Juegos.php">JUEGOS</a></li>
            		<li><a href="#">ADMINISTRAR</a></li>
            		
            	</ul>

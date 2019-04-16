@@ -1,0 +1,38 @@
+.startPage{
+	background: white;
+	margin: 0px 30px;
+
+}
+
+.titulo {
+	margin: 0;
+	padding-top: 25px;
+	padding-bottom: 15px;
+}
+.progreso ul{
+	padding: 0;
+}
+.progreso ul li {
+	padding-top: 30px;
+		padding-bottom: 30px;
+		padding-left: 120px;
+		list-style: none;
+		background-color: white;
+		font-size: 16px;
+
+
+}
+
+.footer{
+	text-align: center;
+}
+
+.footer a:link{
+	text-decoration:none;
+	color: black;
+}
+
+.footer a:visited{
+	text-decoration:none;
+	color: black;
+}
