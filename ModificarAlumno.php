@@ -2,19 +2,19 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Registrar Alumno</title>
+		<title>Modificar Alumno</title>
 	</head>
 	<body>
 		<section class="studentCont">
 			<div class="studentLabel">
-				<h3 class="encabezado">Registro Alumno</h3>
+				<h3 class="encabezado">Modificación de Alumno</h3>
 				<h3>Número de control</h3>
 				<h3>Nombre(s)</h3>	
 				<h3>Apellido paterno</h3>
 				<h3>Fecha de nacimiento</h3>		
 				<h3>Correo</h3>
 				
-					<button id="Registrar" class="enviar formBoton" >Registrar</button>
+					<button id="Modificar" class="enviar formBoton" >Registrar</button>
 			</div>
 			<div class="studentInput">
 				<input type="text" name="" id="_IDControlAlu">
@@ -34,12 +34,8 @@
 							</select>
 					</div>
 					<input type="email" name="" id="_correoAlu">
-					<div class="formBoton">
-						<button id="Limpiar">Limpiar</button>
-					</div>
 				</div>
 			</div>	
 		</section>
 	</body>
-
 
