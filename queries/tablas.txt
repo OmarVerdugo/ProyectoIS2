@@ -4,41 +4,12 @@ USE IS2COMHIS;
 
 
 
-/*//	creacion de la tabla alumnos	//*/
-CREATE TABLE Alumnos 
-		
-( 	
-	idAlumno		INT				PRIMARY KEY,
-			
-	nombreAlu 		VARCHAR(50)	NOT NULL,
-			
-	apePatAlu 		VARCHAR(20)	NOT NULL,
-			
-	apeMatAlu		VARCHAR(20),
-            
-	naciAlu			DATE		NOT NULL,
-			
-	sexoAlu			VARCHAR(1)	NOT NULL,
-            
-	correoAlu		VARCHAR(50)	NOT NULL,	
-            
-	promedio		DOUBLE,
-            
-	idProfe			INT,
-            
-							FOREIGN KEY(idProfe) references Profesores(idProfe)
-		
-);
-        
-
-
-
 
 /*//	creacion de la tabla profesores	//*/
 CREATE TABLE Profesores 
 		
 ( 	
-	idProfe		INT					PRIMARY KEY,
+	idProfe		INT		AUTO_INCREMENT		PRIMARY KEY,
 			
 	nombrePro 	VARCHAR(50) 	NOT NULL,
 			
@@ -53,3 +24,39 @@ CREATE TABLE Profesores
 	correoPro	VARCHAR(50)	NOT NULL	
 	
 );
+
+
+/*//	creacion de la tabla alumnos	//*/
+CREATE TABLE Alumnos 
+		
+( 	
+	idAlumno	INT		AUTO_INCREMENT		PRIMARY KEY,
+			
+	nombreAlu 	VARCHAR(50)	NOT NULL,
+			
+	apePatAlu	VARCHAR(20)	NOT NULL,
+			
+	apeMatAlu	VARCHAR(20),
+            
+	naciAlu		DATE		NOT NULL,
+			
+	sexoAlu		VARCHAR(1)	NOT NULL,
+            
+	correoAlu	VARCHAR(50)	NOT NULL,	
+            
+	promedio	DOUBLE,
+            
+	idProfe		INT,
+            
+							FOREIGN KEY(idProfe) references Profesores(idProfe)
+		
+);
+        
+
+
+/*//	insercion de profesor para fines practicos de desarrollo	//*/
+INSERT INTO Profesores VALUES(	0,	'Martin', 'Agundez', NULL, '1965/07/15','M', 'aguila@uabcs.mx' ); 
+
+SELECT * FROM Profesores;
+
+
