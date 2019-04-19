@@ -23,15 +23,54 @@ Lugar:      La Paz, México
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 
-
 </head>
   
   
 <body>
   <header class="main-header">
            <nav class="main-menu">
-            <?php  ?>
-            <li id="login"><a href="#">Iniciar Sesión (placeholder) </a></li>
+            <li id="login" name="loginLabel">
+                <?php 
+                    $pdo = new PDO('mysql:host=localhost;dbname=IS2COMHIS', 'root', '');
+                    session_start();  
+
+                    $user = $_SESSION['user'];
+                    $stmt = $pdo->prepare("SELECT nombreAlu, apePatAlu FROM Alumnos where emailAlu = :email");
+                    $stmt->bindParam(':email',$user);
+                    $stmt->execute();
+                    $nombre = $stmt->fetch();
+                    if(isset($nombre))
+                      {
+                        echo "<a href='#'>".$nombre['nombreAlu']. " ".$nombre['apePatAlu']."</a>";
+                        ?>
+                        <script>
+                          alert("nombre esta definido en alumno")
+                        </script>
+
+                        <?php
+                      }else
+                      {
+                        ?>
+                        <script>
+                          alert("nombre esta definido en profesor")
+                        </script>
+                       
+                        <?php
+                        $stmt = $pdo->prepare("SELECT nombrePro FROM Profesores where emailPro = :email");
+                        $stmt->bindParam(':email',$user);
+                        $stmt->execute();
+                        $nombre = $stmt->fetch();
+                        
+                        if (isset($nombre)) 
+                        {
+                             echo "<a href='#'>".$nombre['nombrePro']."</a>";
+                        }else
+                        {
+                          echo "<a href='#'> </a>";
+                        }
+                      }
+                  ?>
+            </li>
            	<ul>
            		<li><a href="#">INICIO</a></li>
            		<li><a href="#">CAPÍTULOS</a></li>

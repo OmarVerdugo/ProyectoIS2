@@ -8,8 +8,8 @@
 		$password = $_POST['_password'];
 
 		/*//	se busca usuario en la tabla de alumnos	 //*/
-		$query ="SELECT emailAlu, passAlu FROM Alumnos where emailAlu=:email
-		 and passAlu=:password";
+		$query ="SELECT emailAlu, passAlu FROM Alumnos WHERE emailAlu=:email
+		 AND passAlu=:password";
 		$db = new DB();
 		$conn = $db->getConnection();
 
@@ -21,16 +21,14 @@
 
 		if($result = $stmt->fetch())
 		{
-			$_SESSION['user'] = $result['email'];
+			$_SESSION['user'] = $email;
 			header('location:start.php');
 		}
 		/*//	en caso de que no haya alumno se busca en la tabla de profesores	 //*/
 		else
 		{
-			$query ="SELECT emailPro, passPro FROM Profesores where emailPro=:email
-			 and passPro=:password";
-			$db = new DB();
-			$conn = $db->getConnection();
+			$query ="SELECT emailPro, passPro FROM Profesores WHERE emailPro=:email
+			 AND passPro=:password";
 
 			$stmt = $conn->prepare($query);
 			$stmt->bindParam(':email',$email);
@@ -40,7 +38,7 @@
 
 			if($result = $stmt->fetch())
 			{
-				$_SESSION['user'] = $result['email'];
+				$_SESSION['user'] = $email;
 				header('location:start.php');
 				?>
 				<script >
