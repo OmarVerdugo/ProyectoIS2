@@ -16,7 +16,8 @@ body{
 	text-decoration: none;
 }
 #login a:link{ 
-text-decoration:none; 
+	text-decoration:none; 
+	color: white;
 } 
 
 
@@ -99,8 +100,14 @@ text-decoration:none;
 }
 
 .panelLogin{
-	padding-top: 60px;
+	margin-top: 30px;
 	height: 430px;
+	border-style: groove;
+	border-color: #e8e8e8;
+}
+
+.iniciarSesion{
+	padding-top: 50px;
 }
 
 .campo{

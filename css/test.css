@@ -23,6 +23,23 @@
 
 }
 
+
+#link{
+	color: #50508F;	
+	text-decoration: none;
+}
+#link a:link{ 
+	text-decoration:none; 
+	color: #50508F;	
+} 
+
+
+#link a:visited {
+
+	color: #50508F;
+
+}
+
 .footer{
 	text-align: center;
 }

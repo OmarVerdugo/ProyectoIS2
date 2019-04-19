@@ -1,0 +1,30 @@
+.examen {
+	background: white;
+	margin: 0px 30px;
+}
+.examen ul li{
+	text-align: left;
+	list-style: none;
+	display: inline-block;
+	margin-right: 30%;	
+}
+
+.panelExamen{
+	margin-top: 30px;
+	height: 430px;
+	border-style: groove;
+	border-color: #e8e8e8;
+}
+
+
+.btnFinalizarExamen{
+	position: absolute;
+    right: 34px;
+    bottom: 150px;
+	color: white;
+	font-size: 20px;
+	width: 150px;
+	height: 40px;
+	background-color: #50508f;
+	border: 1px solid #000000;
+}
