@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS IS2COMHIS;
 CREATE DATABASE IS2COMHIS;
 
 USE IS2COMHIS;
@@ -9,19 +10,22 @@ USE IS2COMHIS;
 CREATE TABLE Profesores 
 		
 ( 	
-	idProfe		INT		AUTO_INCREMENT		PRIMARY KEY,
+	idProfe			INT				AUTO_INCREMENT			PRIMARY KEY,
 			
-	nombrePro 	VARCHAR(50) 	NOT NULL,
+	nombrePro 		VARCHAR(50) 	NOT NULL,
 			
-	apePatPro 	VARCHAR(20)	NOT NULL,
+	apePatPro 		VARCHAR(20)		NOT NULL,
 			
-	apeMatPro	VARCHAR(20),
+	apeMatPro		VARCHAR(20),
             
-	naciPro		DATE		NOT NULL,
+	naciPro			DATE			NOT NULL,
 			
-	sexoPro		VARCHAR(1)	NOT NULL,
+	sexoPro			VARCHAR(1)		NOT NULL,
             
-	correoPro	VARCHAR(50)	NOT NULL	
+	emailPro		VARCHAR(50)		NOT NULL	
+
+	passPro			VARCHAR(13)		NOT NULL,
+
 	
 );
 
@@ -30,25 +34,28 @@ CREATE TABLE Profesores
 CREATE TABLE Alumnos 
 		
 ( 	
-	idAlumno	INT		AUTO_INCREMENT		PRIMARY KEY,
+	idAlumno		INT				AUTO_INCREMENT		PRIMARY KEY,
 			
-	nombreAlu 	VARCHAR(50)	NOT NULL,
+	nombreAlu 		VARCHAR(50)		NOT NULL,
 			
-	apePatAlu	VARCHAR(20)	NOT NULL,
+	apePatAlu		VARCHAR(20)		NOT NULL,
 			
-	apeMatAlu	VARCHAR(20),
+	apeMatAlu		VARCHAR(20),
             
-	naciAlu		DATE		NOT NULL,
+	naciAlu			DATE			NOT NULL,
 			
-	sexoAlu		VARCHAR(1)	NOT NULL,
+	sexoAlu			VARCHAR(1)		NOT NULL,
             
-	correoAlu	VARCHAR(50)	NOT NULL,	
+	emailAlu		VARCHAR(50)		NOT NULL,	
             
-	promedio	DOUBLE,
+	promedio		DOUBLE,
             
-	idProfe		INT,
+	idProfe			INT,
+
+	passAlu	VARCHAR(13)		NOT NULL,
+
             
-							FOREIGN KEY(idProfe) references Profesores(idProfe)
+										FOREIGN KEY(idProfe) references Profesores(idProfe)
 		
 );
         
@@ -56,7 +63,8 @@ CREATE TABLE Alumnos
 
 /*//	insercion de profesor para fines practicos de desarrollo	//*/
 INSERT INTO Profesores VALUES(	0,	'Martin', 'Agundez', NULL, '1965/07/15','M', 'aguila@uabcs.mx' ); 
+INSERT INTO Alumnos VALUES(0, 'Francisco', 'Sanchez', 'Guerrero', '1998/02/25', 'F', 'pokemito@uabcs.mx', NULL, '123456', 1);
 
 SELECT * FROM Profesores;
-
+SELECT * FROM Alumnos;
 
