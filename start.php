@@ -4,8 +4,16 @@
 
 	 <section class="startPage">
 		<div class="progreso">   
-		  <ul>
-         	<h3 class="titulo"><li>Bienvenido: [usuario]</li></h3>
+		  <ul><h3 class="titulo"><li>Bienvenido
+         	<?php 
+         				$stmt = $conn->prepare("SELECT nombreAlu FROM Alumnos where emailAlu = :email");
+                        $stmt->bindParam(':email',$user);
+                        $stmt->execute();
+                        $nombre = $stmt->fetch(); 
+                        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+                        echo $nombre['nombreAlu']?>
+                        </li></h3>
 			<h3 class="titulo"><li>Progreso del curso.</li></h3>
 			<div style="float: left; width: 50%;">
 			<li><strong>Capitulo 1 <meter min="0" max="100" low="26" high="75" optimum="100" value="50"></strong></li>
@@ -25,8 +33,8 @@
 		</div>
 
 		</section>
-
-	<footer class="footer"><a href="#" id="logout">Cerrar Sesión</a></footer>
+	<form action="sesionCerrada.php" method="POST">
+	<footer class="footer"><button id="logout">Cerrar sesión</button></footer>
 
 		
 

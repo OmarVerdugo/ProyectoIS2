@@ -8,7 +8,10 @@ Versión:    1.00 lanzada el 25 de Abril de 2019
 Institución:    Universidad Autónoma de Baja California Sur
 Lugar:      La Paz, México
 **********************************************************************
-*/ ?>
+*/ 
+
+  include_once('db/DB.php');
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -23,6 +26,7 @@ Lugar:      La Paz, México
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 
+
 </head>
   
   
@@ -31,51 +35,37 @@ Lugar:      La Paz, México
            <nav class="main-menu">
             <li id="login" name="loginLabel">
                 <?php 
-                    $pdo = new PDO('mysql:host=localhost;dbname=IS2COMHIS', 'root', '');
-                    session_start();  
+                 session_start(); 
+                  if (!isset($_SESSION['user'])) {
+                    echo "<a href='#'> </a>";
+                  }else
+                    {
+                      $db = new DB();
+                      $conn = $db->getConnection();
+                      $user = $_SESSION['user'];
+                      $stmt = $conn->prepare("SELECT nombreAlu, apePatAlu FROM Alumnos WHERE emailAlu = :email");
+                      $stmt->bindParam(':email',$user);
+                      $stmt->execute();
+                      $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-                    $user = $_SESSION['user'];
-                    $stmt = $pdo->prepare("SELECT nombreAlu, apePatAlu FROM Alumnos where emailAlu = :email");
-                    $stmt->bindParam(':email',$user);
-                    $stmt->execute();
-                    $nombre = $stmt->fetch();
-                    if(isset($nombre))
-                      {
+                      $nombre = $stmt->fetch();
+                      
+                        
                         echo "<a href='#'>".$nombre['nombreAlu']. " ".$nombre['apePatAlu']."</a>";
-                        ?>
-                        <script>
-                          alert("nombre esta definido en alumno")
-                        </script>
-
-                        <?php
-                      }else
-                      {
-                        ?>
-                        <script>
-                          alert("nombre esta definido en profesor")
-                        </script>
-                       
-                        <?php
-                        $stmt = $pdo->prepare("SELECT nombrePro FROM Profesores where emailPro = :email");
+                        $stmt = $conn->prepare("SELECT nombrePro, apePatPro FROM Profesores WHERE emailPro = :email");
                         $stmt->bindParam(':email',$user);
                         $stmt->execute();
                         $nombre = $stmt->fetch();
-                        
-                        if (isset($nombre)) 
-                        {
-                             echo "<a href='#'>".$nombre['nombrePro']."</a>";
-                        }else
-                        {
-                          echo "<a href='#'> </a>";
-                        }
-                      }
+                        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                        echo "<a href='#'>".$nombre['nombrePro']." ".$nombre['apePatPro']."</a>";   
+                   }
                   ?>
             </li>
            	<ul>
-           		<li><a href="#">INICIO</a></li>
+           		<li><a href="http://localhost/ProyectoIS2/start.php#">INICIO</a></li>
            		<li><a href="#">CAPÍTULOS</a></li>
-           		<li><a href="#">EVALUACIONES</a></li>
-           		<li><a href="#">JUEGOS</a></li>
+           		<li><a href="http://localhost/ProyectoIS2/evaluaciones.php#">EVALUACIONES</a></li>
+           		<li><a href="http://localhost/ProyectoIS2/juegos.php#">JUEGOS</a></li>
            		<li><a href="#">ADMINISTRAR</a></li>
            		
            	</ul>

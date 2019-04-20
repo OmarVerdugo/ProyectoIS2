@@ -26,14 +26,12 @@
 	text-align: center;
 }
 
-.footer a:link{
-	text-decoration:none;
+
+.footer button{
+	border: none;
+	background-color: none;
 	color: black;
 }
 
-.footer a:visited{
-	text-decoration:none;
-	color: black;
-}
 
 /*CSS Pagina de inicio*/

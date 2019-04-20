@@ -18,8 +18,8 @@
 		$stmt->bindParam(':password',$password);
 		$stmt->execute();
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
-
-		if($result = $stmt->fetch())
+		$result = $stmt->fetch();
+		if($result['passAlu']==$password)
 		{
 			$_SESSION['user'] = $email;
 			header('location:start.php');
@@ -35,12 +35,14 @@
 			$stmt->bindParam(':password',$password);
 			$stmt->execute();
 			$stmt->setFetchMode(PDO::FETCH_ASSOC);
-
-			if($result = $stmt->fetch())
+			$result = $stmt->fetch();
+			if($result['passPro']==$password)
 			{
 				$_SESSION['user'] = $email;
 				header('location:start.php');
-				?>
+			}else
+				{
+					?>
 				<script >
 					alert("Usuario o contraseña incorrecta")
 		            window.location.href=('index.php');
