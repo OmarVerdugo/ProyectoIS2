@@ -19,19 +19,22 @@
 		list-style: none;
 		background-color: white;
 		font-size: 25px;
-
 }
 
 .footer{
 	text-align: center;
 }
 
-
 .footer button{
 	border: none;
-	background-color: none;
+	background-color: #E1E1E1;
 	color: black;
 }
 
+.footer button:hover{
+	border-bottom: 2px solid #50508F;
+	border-left: 2px solid #50508F;
+	border-right: 2px solid #50508F;
+}
 
 /*CSS Pagina de inicio*/
