@@ -57,18 +57,54 @@
 .formBoton{
 	margin-top:	40px;
 }
+
+.formBoton button:hover{
+	color: gray;
+}
+
 .enviar{
 	color: #E1E1E1;
 	background-color: #50508F;
 	border: none;
 	padding: 5px 30px; 
 }
+
+.enviar:hover{
+	color: gray;
+}
+
 .formBoton [id="Limpiar"]{
 	border-color: #e8e8e8 ;
 	border-style: groove;
 	padding: 5px 30px; 
 }
 
+.adminAlu {
+	display: flex;
+	flex-direction: column;
+	color: black;
+	margin: 0 auto;
+}
 
+.adminAlu a:link{ 
+	text-decoration:none; 
+	color: black;
+} 
+
+.adminAlu a{
+	margin: 25px 0;
+}
+
+.adminAlu a:hover{
+	color: #8DABC2;
+	border-bottom: 1px solid #8DABC2;
+	margin: 24.5px 0;
+}
+
+.adminAlu a:visited {
+	color: black;
+	display: none;
+	text-align: left;
+}
 
 /*******************	Control de alumno	*******************/

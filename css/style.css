@@ -72,7 +72,6 @@ body{
 }
 
 .main-menu ul li a:hover{
-
 	color: #8DABC2;
 	border-bottom: 2px solid #8DABC2;
 }
@@ -82,12 +81,10 @@ body{
    visibility: hidden;
    font-size: 1px;
 
-
 }
 .container ul li{
 	display: inline-block;
 }
-
 
 /*******************	CSS login	*******************/
 .login {

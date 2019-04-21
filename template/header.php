@@ -47,26 +47,25 @@ Lugar:      La Paz, México
                       $stmt->bindParam(':email',$user);
                       $stmt->execute();
                       $stmt->setFetchMode(PDO::FETCH_ASSOC);
-
-                      $nombre = $stmt->fetch();
+                      $nombre = $stmt->fetch();              
+                      echo "<a href='#'>".$nombre['nombreAlu']. " ".$nombre['apePatAlu']."</a>";
                       
-                        
-                        echo "<a href='#'>".$nombre['nombreAlu']. " ".$nombre['apePatAlu']."</a>";
-                        $stmt = $conn->prepare("SELECT nombrePro, apePatPro FROM Profesores WHERE emailPro = :email");
-                        $stmt->bindParam(':email',$user);
-                        $stmt->execute();
-                        $nombre = $stmt->fetch();
-                        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                        echo "<a href='#'>".$nombre['nombrePro']." ".$nombre['apePatPro']."</a>";   
+                      # //  si no se encuentra en alumnos, se imprime un campo vacio y se busca en profesores
+                      $stmt = $conn->prepare("SELECT nombrePro, apePatPro FROM Profesores WHERE emailPro = :email");
+                      $stmt->bindParam(':email',$user);
+                      $stmt->execute();
+                      $nombre = $stmt->fetch();
+                      echo "<a href='#'>".$nombre['nombrePro']." ".$nombre['apePatPro']."</a>";   
+                      # //  si no se encuentra en profesores se imprime un campo vacio y solo se ve reflejado el nombre del Alumnos
                    }
                   ?>
             </li>
            	<ul>
            		<li><a href="http://localhost/ProyectoIS2/start.php#">INICIO</a></li>
-           		<li><a href="#">CAPÍTULOS</a></li>
+           		<li><a href="http://localhost/ProyectoIS2/menuCapitulos.php#">CAPÍTULOS</a></li>
            		<li><a href="http://localhost/ProyectoIS2/evaluaciones.php#">EVALUACIONES</a></li>
            		<li><a href="http://localhost/ProyectoIS2/juegos.php#">JUEGOS</a></li>
-           		<li><a href="#">ADMINISTRAR</a></li>
+           		<li><a href="http://localhost/ProyectoIS2/menuControlPro.php#">ADMINISTRAR</a></li>
            		
            	</ul>
            </nav>
