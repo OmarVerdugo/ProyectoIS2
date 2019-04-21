@@ -20,7 +20,7 @@ CREATE TABLE Alumnos
 			nombreAlu 		VARCHAR(50) NOT NULL,
 			apePatAlu 		VARCHAR(20)	NOT NULL,
 			apeMatAlu		VARCHAR(20),
-            naciAlu			DATE		NOT NULL,
+            naciAlu			DATE,
 			sexoAlu			VARCHAR(1)	NOT NULL,
             emailAlu		VARCHAR(50)	NOT NULL,	
             promedio		DOUBLE,
@@ -30,6 +30,6 @@ CREATE TABLE Alumnos
 		);
      
 INSERT INTO Profesores VALUES(	0,	'Martin', 'Agundez', NULL, '1965/07/15','M', 'aguila@uabcs.mx' , 'america' ); 
-INSERT INTO Alumnos VALUES(0, 'Francisco', 'Sanchez', 'Guerrero', '1998/02/25', 'F', 'pokemito@uabcs.mx', NULL, '123456', 1);
+INSERT INTO Alumnos VALUES(0, 'Francisco', 'Sanchez', 'Guerrero', '1998/02/25', 'F', 'pokemito@uabcs.mx', 0, '123456', 1);
 SELECT * FROM Profesores;
 SELECT * FROM Alumnos;

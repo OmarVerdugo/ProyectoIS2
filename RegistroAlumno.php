@@ -28,7 +28,7 @@
 							<select name="_sexoAlu">
 								<option value="M">Masculino</option>
 								<option value="F">Femenino</option>
-								<option value="default" selected=""> </option>	
+								<option value="" selected=""> </option>	
 							</select>
 					</div>
 					<input type="email" name="_emailAlu" id="_correoAlu">

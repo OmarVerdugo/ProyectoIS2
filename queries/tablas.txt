@@ -42,7 +42,7 @@ CREATE TABLE Alumnos
 			
 	apeMatAlu		VARCHAR(20),
             
-	naciAlu			DATE			NOT NULL,
+	naciAlu			DATE,
 			
 	sexoAlu			VARCHAR(1)		NOT NULL,
             
@@ -53,7 +53,6 @@ CREATE TABLE Alumnos
 	idProfe			INT,
 
 	passAlu	VARCHAR(13)		NOT NULL,
-
             
 										FOREIGN KEY(idProfe) references Profesores(idProfe)
 		
@@ -63,7 +62,7 @@ CREATE TABLE Alumnos
 
 /*//	insercion de profesor para fines practicos de desarrollo	//*/
 INSERT INTO Profesores VALUES(	0,	'Martin', 'Agundez', NULL, '1965/07/15','M', 'aguila@uabcs.mx' ); 
-INSERT INTO Alumnos VALUES(0, 'Francisco', 'Sanchez', 'Guerrero', '1998/02/25', 'F', 'pokemito@uabcs.mx', NULL, '123456', 1);
+INSERT INTO Alumnos VALUES(0, 'Francisco', 'Sanchez', 'Guerrero', '1998/02/25', 'F', 'pokemito@uabcs.mx', 0, '123456', 1);
 
 SELECT * FROM Profesores;
 SELECT * FROM Alumnos;
