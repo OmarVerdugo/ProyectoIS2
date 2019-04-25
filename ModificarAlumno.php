@@ -18,7 +18,10 @@
 					<button id="Modificar" class="enviar formBoton" >Registrar</button>
 			</div>
 			<div class="studentInput">
-				<input type="text" name="" id="_IDControlAlu">
+				<?php #<input type="text" name="" id="_IDControlAlu"> ?>
+				<select>
+					<option value=" " selected " "> </option>
+				</select>
 				<input type="text" name="" id="_nombreAlu">
 				<div class="mismoFlex apeInput">
 					<input type="text" name="" id="_apePatAlu">
@@ -31,7 +34,7 @@
 							<select>
 								<option value="M">Masculino</option>
 								<option value="F">Femenino</option>
-								<option value="default" selected=""> </option>	
+								<option value=" " selected=""> </option>	
 							</select>
 					</div>
 					<input type="email" name="" id="_correoAlu">
