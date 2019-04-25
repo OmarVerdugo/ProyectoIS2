@@ -19,8 +19,8 @@
 			</div>
 			<div class="studentInput">
 				<?php #<input type="text" name="" id="_IDControlAlu"> ?>
-				<select>
-					<option value=" " selected " "> </option>
+				<select class="idAl">
+					<option value=" " selected "     "> </option>
 				</select>
 				<input type="text" name="" id="_nombreAlu">
 				<div class="mismoFlex apeInput">
