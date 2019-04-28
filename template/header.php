@@ -65,7 +65,22 @@ Lugar:      La Paz, México
            		<li><a href="http://localhost/ProyectoIS2/menuCapitulos.php#">CAPÍTULOS</a></li>
            		<li><a href="http://localhost/ProyectoIS2/evaluaciones.php#">EVALUACIONES</a></li>
            		<li><a href="http://localhost/ProyectoIS2/juegos.php#">JUEGOS</a></li>
-           		<li><a href="http://localhost/ProyectoIS2/menuControlPro.php#">ADMINISTRAR</a></li>
+           		<li><a 
+                <?php  
+                 if (isset($_SESSION['user'])) 
+                 {
+                    $stmt = $conn->prepare("SELECT idProfe FROM Profesores WHERE emailPro = :email");
+                    $stmt->bindParam(':email',$user);
+                    $stmt->execute();
+                    $existencia = $stmt->fetch();
+                    if (isset($existencia['idProfe'])) {
+                      echo "href='http://localhost/ProyectoIS2/menuControlPro.php#'";
+                    }else{
+                      echo "href='http://localhost/ProyectoIS2/menuControlAlu.php#'";                    
+                    }
+                } 
+                ?>">ADMINISTRAR
+              </a></li>
            		
            	</ul>
            </nav>
