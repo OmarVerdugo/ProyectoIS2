@@ -14,12 +14,12 @@
 				<h3>Apellido paterno</h3>
 				<h3>Fecha de nacimiento</h3>		
 				<h3>Correo</h3>
-				
-					<button id="Modificar" class="enviar formBoton" >Registrar</button>
+					<form action="AlumnoModificado.php" method="POST">
+					<button id="Modificar" class="enviar formBoton" >Modificar</button>
 			</div>
 			<div class="studentInput">
 			
-				<select class="idAl">	
+				<select class="idAl" name="idAlu">	
 					<?php 
 					  $stmt = $conn->prepare("SELECT idProfe FROM Profesores WHERE emailPro = :email");
                       $stmt->bindParam(':email',$_SESSION['user']);
@@ -40,25 +40,27 @@
 					  {
 						echo "<option value=". $row['idAlumno']. "selected = ".$row['nombreAlu']." ".$row['apePatAlu'] .">".$row['nombreAlu']. " ". $row['apePatAlu']." ". $row['apeMatAlu']. "</option>";
 					  };
+
+
 				?>
 					<option value=" " selected = ""> </option>
 				</select>
-				<input type="text" name="" id="_nombreAlu">
+				<input type="text" name="_nombreAlu" id="_nombreAlu">
 				<div class="mismoFlex apeInput">
-					<input type="text" name="" id="_apePatAlu">
+					<input type="text" name="_apePatAlu" id="_apePatAlu">
 					<h3>Apellido materno</h3>
-					<input type="text" name="" id="_apeMatAlu">
+					<input type="text" name="_apeMatAlu" id="_apeMatAlu">
 				</div>
 					<div class="mismoFlex">
-						<input type="date" name="" id="_naciAlu">
+						<input type="date" name="_naciAlu" id="_naciAlu">
 						<h3>Sexo</h3>
-							<select>
+							<select name="_sexoAlu">
 								<option value="M">Masculino</option>
 								<option value="F">Femenino</option>
 								<option value=" " selected=""> </option>	
 							</select>
 					</div>
-					<input type="email" name="" id="_correoAlu">
+					<input type="email" name="_emailAlu" id="_correoAlu">
 				</div>
 			</div>	
 		</section>
