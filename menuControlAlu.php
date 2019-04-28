@@ -7,7 +7,7 @@
 
 </head>
 <body>
-	<div class="passUpdate">				
+	<div class="studentCont">				
 		<form action="passCambio.php" method="POST">
 		<h3>Modificar contraseña</h3>
 		<input type="password" name="_pass" id="_pass">

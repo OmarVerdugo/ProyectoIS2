@@ -9,7 +9,6 @@
 			$pass = $_POST['_pass'];
 			$alu =  $_SESSION['user'];
 
-				
 			 #	//	aplica la actualizacion en la base de datos   //
 		    $query ="UPDATE Alumnos
 					SET passAlu = :pass 
