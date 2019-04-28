@@ -27,15 +27,19 @@
                       $stmt->setFetchMode(PDO::FETCH_ASSOC);
                       $profe = $stmt->fetch(); 
 
-                      $stmt = $conn->prepare("SELECT idAlumno, nombreAlu, apePatAlu, apeMatAlu FROM Alumnos WHERE idProfe = :idprofe");
-                      $stmt->bindParam(':idprofe',$profe['idProfe']);
-                      $stmt->execute();
-                      $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                      $nombre = $stmt->fetch();              
-                     
+                      $conni = mysqli_connect("localhost", "root","","IS2COMHIS");
 
-                      echo "<option value=".$nombre['idAlumno']." selected=".$nombre['nombreAlu'].$nombre['apePatAlu']. 
-                      $nombre['apeMatAlu'].">".$nombre['nombreAlu']." ".$nombre['apePatAlu']." " .$nombre['apeMatAlu']. "</option>";         
+					  $query = "SELECT idAlumno, nombreAlu, apePatAlu, apeMatAlu FROM Alumnos WHERE idProfe = ?";
+					  $stmt = $conni->prepare($query);
+					  $stmt->bind_param("i", $profe['idProfe']);
+					  $stmt->execute();
+					  $result = $stmt->get_result();
+
+					  $val=mysqli_query($conni,$stmt);	
+					  while ($row = $result->fetch_assoc()) 
+					  {
+						echo "<option value=". $row['idAlumno']. "selected = ".$row['nombreAlu']." ".$row['apePatAlu'] .">".$row['nombreAlu']. " ". $row['apePatAlu']." ". $row['apeMatAlu']. "</option>";
+					  };
 				?>
 					<option value=" " selected = ""> </option>
 				</select>
