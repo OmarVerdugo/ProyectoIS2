@@ -12,7 +12,7 @@
 		<?php # numero de intentos pendiente ?>
 	</div>
 
-
+	<form action="calExamen.php" method="POST">;
 	<div class="exam">
 	<?php 
 		$PREGUNTAS[1] = 1 ;
@@ -26,6 +26,7 @@
 		$USADOS[1] = 0;
 		$USADOS[2] = 0;
 		$USADOS[3] = 0;
+
 
 		for ($i=1; $i <4 ; $i++) 
 		{ 
@@ -50,8 +51,8 @@
 					echo "<input type=\"radio\" name=\"pre1\" value=\"false\" id=\"pre1_3\"/>";
 					echo "<label for=\"pre1_3\">1944-1959</label>";
 
-					echo "</div>";
-					break;
+					echo "</div>"; 
+					break;	
 
 				case 2:
 					echo  "<h3 class=\"preg\">".$i.": Las computadoras hacian uso de estos para intercambiar datos</h3>";
@@ -149,9 +150,9 @@
 		setcookie('pregunta1', $USADOS[1] );
 		setcookie('pregunta2', $USADOS[2] );
 		setcookie('pregunta3', $USADOS[3] );
+		setcookie('examen', "Examen 1")
 	 ?>
 	</div>
-	<form action="calExamen.php" method="POST">
 
 	<div class="butDis"><button class="final">Finalizar</button></div>
 

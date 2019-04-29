@@ -1,9 +1,7 @@
 <?php 
 	session_start();
 	include_once('db/DB.php');
-
 	
-	$alumno = $_SESSION['user'];	
 	$PREGUNTAS[1] = $_COOKIE['pregunta1'];
 	$PREGUNTAS[2] = $_COOKIE['pregunta2'];
 	$PREGUNTAS[3] = $_COOKIE['pregunta3'];
@@ -12,7 +10,6 @@
 	unset($_COOKIE['pregunta3']);
 	
 
-	
 	$aciertos = 0;
 	for ($i=1; $i < 4 ; $i++) 
 	{ 
@@ -49,7 +46,32 @@
 
 	
 	$promedio = ($aciertos*100)/3;
-	echo $promedio;
-	
+	$examen = $_COOKIE['examen'];
+	unset($_COOKIE['examen']);
+	$intentos = 1;
+
+	$pdo = new PDO('mysql:host=localhost;dbname=IS2COMHIS', 'root', '');
+			$db = new DB();		
+			$conn = $db->getConnection();
+				
+			$query ="SELECT idAlumno FROM Alumnos WHERE emailAlu=:sesion";
+			$stmt = $conn->prepare($query);
+			$stmt->bindParam(':sesion', $_SESSION['user']);
+			$stmt->execute();
+		 	$sesAlu = $stmt->fetch();   
+
+
+			 #	//	verifica si ese email ya esta registrado en la base de datos   //
+		   $query ="INSERT INTO CalifExam VALUES('0', :examen,:calif,now(),:intentos, :alumno)";
+				$stmt = $conn->prepare($query);
+				$stmt->bindParam(':alumno', $sesAlu['idAlumno']);
+				$stmt->bindParam(':examen', $examen);
+				$stmt->bindParam(':calif', $promedio);
+				$stmt->bindParam(':intentos', $intentos);
+				$stmt->execute(); 				
+
+
+		echo "tu promedio es: ".$promedio;
+		echo "    <a href=\"http://localhost/ProyectoIS2/start.php#\">Volver a menu</a>";
 
  ?>
