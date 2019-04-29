@@ -31,8 +31,6 @@
 				$stmt->execute();
 			 	$sesPro = $stmt->fetch();        
 				       	 
-
-
 				#	//	inserta el alumno en la base de datos   //
 				$query ="INSERT INTO Alumnos VALUES('0', :nombre,:apepat,:apemat,:naci,:sexo,:email,'0','default',:profe)";
 				$stmt = $conn->prepare($query);

@@ -145,9 +145,14 @@
 
 			$USADOS[$i] = $n;	
 		}
+
+		setcookie('pregunta1', $USADOS[1] );
+		setcookie('pregunta2', $USADOS[2] );
+		setcookie('pregunta3', $USADOS[3] );
 	 ?>
 	</div>
-	<form action="calExam.php" method="POST">	
+	<form action="calExamen.php" method="POST">
+
 	<div class="butDis"><button class="final">Finalizar</button></div>
 
 </body>

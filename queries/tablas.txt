@@ -58,6 +58,16 @@ CREATE TABLE Alumnos
 		
 );
         
+CREATE TABLE CalifExam
+(
+	idCalExam		INT				AUTO_INCREMENT		PRIMARY KEY,
+    tituloExam		VARCHAR(20)		NOT NULL,
+    califExam		DOUBLE			NOT NULL,
+    fechaExam		DATE			NOT NULL,	
+    intentos		INT 			NOT NULL,
+    idAlumno		INT,
+								FOREIGN KEY(idAlumno) references Alumnos(idAlumno)
+);
 
 
 /*//	insercion de profesor para fines practicos de desarrollo	//*/

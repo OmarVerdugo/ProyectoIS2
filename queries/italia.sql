@@ -29,6 +29,17 @@ CREATE TABLE Alumnos
             FOREIGN KEY(idProfe) references Profesores(idProfe)
 		);
      
+     
+CREATE TABLE CalifExam
+(
+	idCalExam		INT				AUTO_INCREMENT		PRIMARY KEY,
+    tituloExam		VARCHAR(20)		NOT NULL,
+    califExam		DOUBLE			NOT NULL,
+    fechaExam		DATE			NOT NULL,	
+    intentos		INT 			NOT NULL,
+    idAlumno		INT,
+								FOREIGN KEY(idAlumno) references Alumnos(idAlumno)
+);
 INSERT INTO Profesores VALUES(	0,	'Martin', 'Agundez', NULL, '1965/07/15','M', 'aguila@uabcs.mx' , 'america' ); 
 INSERT INTO Alumnos VALUES(0, 'Francisco', 'Sanchez', 'Guerrero', '1998/02/25', 'F', 'pokemito@uabcs.mx', 0, '123456', 1);
 SELECT * FROM Profesores;
