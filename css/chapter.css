@@ -11,8 +11,19 @@
 
 .panelCapitulo{
 	margin-top: 30px;
-	height: 430px;
+	height: 700px;
 	border-style: groove;
 	border-color: #e8e8e8;
 }
 
+.contenido{
+	padding-left: 30px;
+}
+
+.fas{
+	font-size: 40px;
+}
+
+.divDatos a:visited{
+	color: black;
+}
