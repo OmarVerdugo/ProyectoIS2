@@ -22,7 +22,7 @@
 		if($result['passAlu']==$password)
 		{
 			$_SESSION['user'] = $email;
-			header('location:start.php');
+			header('location:startAlu.php');
 		}
 		/*//	en caso de que no haya alumno se busca en la tabla de profesores	 //*/
 		else
@@ -39,7 +39,7 @@
 			if($result['passPro']==$password)
 			{
 				$_SESSION['user'] = $email;
-				header('location:start.php');
+				header('location:startPro.php');
 			}else
 				{
 					?>

@@ -3,6 +3,7 @@ include('template/header.php');
 
 ?>
 
+
 <link rel="stylesheet" type="text/css" href="css/start.css">
 
 	 <section class="startPage">
@@ -45,4 +46,3 @@ include('template/header.php');
 </body>
 
 </html>
-

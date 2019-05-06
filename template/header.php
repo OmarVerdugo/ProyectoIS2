@@ -11,6 +11,7 @@ Lugar:      La Paz, México
 */ 
 
   include_once('db/DB.php');
+  include('funcs.php');
 ?>
 
 <!DOCTYPE html>
@@ -25,10 +26,7 @@ Lugar:      La Paz, México
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
-
-
 </head>
-  
   
 <body>
   <header class="main-header">
@@ -61,7 +59,16 @@ Lugar:      La Paz, México
                   ?>
             </li>
            	<ul>
-           		<li><a href="http://localhost/ProyectoIS2/start.php#">INICIO</a></li>
+           		
+              <?php 
+                  if (esProfe()) {
+                    echo "<li><a href=\"http://localhost/ProyectoIS2/startPro.php#\">INICIO</a></li>";
+                  }else
+                    {
+                      echo "<li><a href=\"http://localhost/ProyectoIS2/startAlu.php#\">INICIO</a></li>";
+                    }
+               ?>
+             
            		<li><a href="http://localhost/ProyectoIS2/menuCapitulos.php#">CAPÍTULOS</a></li>
            		<li><a href="http://localhost/ProyectoIS2/evaluaciones.php#">EVALUACIONES</a></li>
            		<li><a href="http://localhost/ProyectoIS2/juegos.php#">JUEGOS</a></li>
@@ -69,11 +76,7 @@ Lugar:      La Paz, México
                 <?php  
                  if (isset($_SESSION['user'])) 
                  {
-                    $stmt = $conn->prepare("SELECT idProfe FROM Profesores WHERE emailPro = :email");
-                    $stmt->bindParam(':email',$user);
-                    $stmt->execute();
-                    $existencia = $stmt->fetch();
-                    if (isset($existencia['idProfe'])) {
+                    if (esProfe()) {
                       echo "href='http://localhost/ProyectoIS2/menuControlPro.php#'";
                     }else{
                       echo "href='http://localhost/ProyectoIS2/menuControlAlu.php#'";                    

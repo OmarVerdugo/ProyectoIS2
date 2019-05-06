@@ -30,6 +30,7 @@ CREATE TABLE Alumnos
 		);
      
      
+        
 CREATE TABLE CalifExam
 (
 	idCalExam		INT				AUTO_INCREMENT		PRIMARY KEY,
@@ -44,3 +45,4 @@ INSERT INTO Profesores VALUES(	0,	'Martin', 'Agundez', NULL, '1965/07/15','M', '
 INSERT INTO Alumnos VALUES(0, 'Francisco', 'Sanchez', 'Guerrero', '1998/02/25', 'F', 'pokemito@uabcs.mx', 0, '123456', 1);
 SELECT * FROM Profesores;
 SELECT * FROM Alumnos;
+SELECT * FROM CalifExam;
