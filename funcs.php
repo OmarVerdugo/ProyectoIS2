@@ -27,8 +27,8 @@ function getCalif($capitulo){
 	return $cal['califExam'];
 }
 
-function printMeter($capitulo){
-	echo "<li><strong>Capitulo 1 <meter min=\"0\" max=\"100\" low=\"26\" high=\"75\" optimum=\"100\" value=\"". getCalif($capitulo)."\"></strong></li>";
+function printMeter($capitulo, $label){
+	echo "<li><strong>".$label ."<meter min=\"0\" max=\"100\" low=\"26\" high=\"75\" optimum=\"100\" value=\"". getCalif($capitulo)."\"></strong></li>";
 }
 
 function esProfe(){

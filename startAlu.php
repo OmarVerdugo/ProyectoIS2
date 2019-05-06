@@ -20,19 +20,19 @@ include('template/header.php');
 				<h3 class="titulo"><li>Progreso del curso.</li></h3>
 				<div style="float: left; width: 50%;">
 					<?php  
-						printMeter('examen 1');
-						printMeter('examen 2');
-						printMeter('examen 3');
-						printMeter('examen 4');
+						printMeter('examen 1','Capitulo 1');
+						printMeter('examen 2', 'Capitulo 2');
+						printMeter('examen 3','Capitulo 3');
+						printMeter('examen 4','Capitulo 4');
 							
 					?>
 				</div>
 				<div style="float: right; width: 50%;">
 					<?php 
-						printMeter('examen 5');
-						printMeter('examen 6');
-						printMeter('examen 7');
-						printMeter('examen 8');
+						printMeter('examen 5','Capitulo 5');
+						printMeter('examen 6', 'Capitulo 6');
+						printMeter('examen 7','Capitulo 7');
+						printMeter('examen 8', 'Capitulo 8');
 					?>
 				</div>
 
