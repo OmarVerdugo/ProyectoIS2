@@ -87,5 +87,28 @@ function divClase($clase){
 	echo "</div>";
 }
 
+function actualPromedio($calif){
+	
+	$alu=getIdAlumno();
+
+	$db = new DB();
+ 	$conn = $db->getConnection();
+	$stmt = $conn->prepare("SELECT promedio FROM Alumnos WHERE idAlumno = :alumno");
+	$stmt->bindParam(':alumno',$alu);
+    $stmt->execute();
+    $prom = $stmt->fetch();
+
+	$promedio = ($calif + $prom['promedio'] ) / 8;
+
+	$stmt = $conn->prepare("UPDATE Alumnos 
+							SET promedio = :promedio 
+							WHERE idAlumno = :alumno");
+	$stmt->bindParam(':alumno',$alu);
+	$stmt->bindParam(':promedio',$promedio);
+    $stmt->execute();
+    
+
+}
+
 
  ?>

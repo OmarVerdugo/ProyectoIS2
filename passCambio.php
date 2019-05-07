@@ -16,11 +16,8 @@
 			$stmt->execute();	
 			$passbd = $stmt->fetch();   
 
-			if ($passc == $pass and $pass == $passbd['passAlu']) 
+			if ($passc == $passbd['passAlu']) 
 			{
-				
-				
-
 				 #	//	aplica la actualizacion en la base de datos   //
 			    $query ="UPDATE Alumnos
 						SET passAlu = :pass 

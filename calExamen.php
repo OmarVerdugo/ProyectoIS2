@@ -73,7 +73,7 @@
 		$stmt->bindParam(':calif', $promedio);
 		$stmt->bindParam(':intentos', $intent);
 		$stmt->execute(); 				
-
+		actualPromedio($promedio);
 		header('location:resultExam.php'); 
 	}else{
 
@@ -134,8 +134,8 @@
 			$stmt->bindParam(':examen', $examen);
 			$stmt->bindParam(':calif', $promedio);
 			$stmt->bindParam(':intentos', $intentos);
-			$stmt->execute(); 				
-
+			$stmt->execute(); 		
+			actualPromedio($promedio);		
 			header('location:resultExam.php'); 
 		}else{
 			echo "<h3>Ya has realizado al maximo de intentos</h3>";
@@ -143,6 +143,4 @@
 
 	}
 
-
-	
  ?>
