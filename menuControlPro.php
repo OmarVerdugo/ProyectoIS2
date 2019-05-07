@@ -12,7 +12,7 @@
  			<a href="http://localhost/ProyectoIS2/RegistroAlumno.php#"><img src="img/key.png" width="20px" height="20px">	Registrar Alumnos</a>
 	 		<a href="http://localhost/ProyectoIS2/ModificarAlumno.php#"><img src="img/key.png" width="20px" height="20px">	Modificar Alumno</a>
 	 		<a href="http://localhost/ProyectoIS2/EliminarAlumno.php#"><img src="img/key.png" width="20px" height="20px">	Eliminar Alumno</a>
-	 		<a href=""><img src="img/key.png" width="20px" height="20px">	Enviar Reporte</a>
+	 		<?php  #<a href=""><img src="img/key.png" width="20px" height="20px">	Enviar Reporte</a>?>
  		</div>
  		
 

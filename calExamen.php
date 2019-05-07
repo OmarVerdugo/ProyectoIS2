@@ -50,6 +50,27 @@
 				case 6:
 					$PRECORREC[$i] = $_POST['pre6'];
 					break;
+				case 7:
+						$PRECORREC[$i] = $_POST['pre7'];
+						break;
+					case 8:
+						$PRECORREC[$i] = $_POST['pre8'];
+						break;
+					case 9:
+						$PRECORREC[$i] = $_POST['pre9'];
+						break;
+					case 10:
+						$PRECORREC[$i] = $_POST['pre10'];
+						break;
+					case 11:
+						$PRECORREC[$i] = $_POST['pre11'];
+						break;
+					case 12:
+						$PRECORREC[$i] = $_POST['pre12'];
+						break;
+					case 13:
+						$PRECORREC[$i] = $_POST['pre13'];
+						break;
 
 				default:
 					
@@ -109,6 +130,27 @@
 						break;
 					case 6:
 						$PRECORREC[$i] = $_POST['pre6'];
+						break;
+					case 7:
+						$PRECORREC[$i] = $_POST['pre7'];
+						break;
+					case 8:
+						$PRECORREC[$i] = $_POST['pre8'];
+						break;
+					case 9:
+						$PRECORREC[$i] = $_POST['pre9'];
+						break;
+					case 10:
+						$PRECORREC[$i] = $_POST['pre10'];
+						break;
+					case 11:
+						$PRECORREC[$i] = $_POST['pre11'];
+						break;
+					case 12:
+						$PRECORREC[$i] = $_POST['pre12'];
+						break;
+					case 13:
+						$PRECORREC[$i] = $_POST['pre13'];
 						break;
 
 					default:
