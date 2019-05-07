@@ -23,8 +23,6 @@
 			<a href="http://localhost/ProyectoIS2/examenCap6.php#" id="link">Realizar examen</a></strong></li>
 		<li><strong>Capitulo 7: <input type="text" disabled name="" id="examen1"><br>
 			<a href="http://localhost/ProyectoIS2/examenCap7.php#" id="link">Realizar examen</a></strong></li>
-		<li><strong>Capitulo 8: <input type="text" disabled name="" id="examen1"><br>
-			<a href="http://localhost/ProyectoIS2/examenCap8.php#" id="link">Realizar examen</a></strong></li>
 		</div>
 		<div class="mitad" style="float: right; width: 30%;">
 		<li><strong>Examen Final:<input type="text" disabled name="" id="examen1"><br>

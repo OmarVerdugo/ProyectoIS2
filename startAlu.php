@@ -32,7 +32,7 @@ include('template/header.php');
 						printMeter('examen 5','Capitulo 5');
 						printMeter('examen 6', 'Capitulo 6');
 						printMeter('examen 7','Capitulo 7');
-						printMeter('examen 8', 'Capitulo 8');
+						printMeter('examen f', 'Examen Final');
 					?>
 				</div>
 
