@@ -12,6 +12,18 @@ function getIdAlumno(){
 	return $alu['idAlumno'];
 }
 
+function getIdProfe(){
+	$db = new DB();
+ 	$conn = $db->getConnection();
+	$stmt = $conn->prepare("SELECT idProfe FROM Profesores WHERE emailPro = :email");
+ 	$stmt->bindParam(':email',$_SESSION['user']);
+	$stmt->execute();
+	$stmt->setFetchMode(PDO::FETCH_ASSOC);
+	$profe = $stmt->fetch();              
+
+	return $profe['idProfe'];
+}
+
 function getCalif($capitulo){
 	$db = new DB();
  	$conn = $db->getConnection();
@@ -45,4 +57,35 @@ function esProfe(){
     }
 }
 	
+function divClase($clase){
+
+
+	echo "<div class=\"clasesAlu\">";
+	echo 	"<h3>Grupo ". $clase ."</h3>";
+	
+	echo 	"<div class=\"clasesCont\">";
+
+			   $conni = mysqli_connect("localhost", "root","","IS2COMHIS");
+			   $query = "SELECT nombreAlu, apePatAlu, promedio FROM Alumnos WHERE idProfe = ? AND clase = ?";
+			   $stmt = $conni->prepare($query);
+			   $profe = getIdProfe();
+			   $stmt->bind_param("is", $profe, $clase);
+			   $stmt->execute();
+			   $result = $stmt->get_result();
+
+			   $promedio = 0;
+			   $alumnos = 0;
+			   while ($row = $result->fetch_assoc()) 
+			   {
+				 echo "<br>".$row['nombreAlu']." ".$row['apePatAlu'] ." Promedio: ".round($row['promedio'],1);
+				 $promedio += round($row['promedio'],1);
+				 $alumnos++; 
+			   };
+
+		echo "</div>";
+		echo "<br>Promedio del grupo: ".round(	($promedio / $alumnos) , 1);
+	echo "</div>";
+}
+
+
  ?>

@@ -10,34 +10,31 @@ include('template/header.php');
 		<div class="progreso">   
 		  <ul><h3 class="titulo"><li>Bienvenido
 	         	<?php 
-	         				$stmt = $conn->prepare("SELECT nombreAlu FROM Alumnos where emailAlu = :email");
-	                        $stmt->bindParam(':email',$user);
-	                        $stmt->execute();
-	                        $nombre = $stmt->fetch(); 
-	                        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+	 			   $stmt = $conn->prepare("SELECT nombrePro FROM Profesores WHERE emailPro = :email");
+	               $stmt->bindParam(':email',$_SESSION['user']);
+	               $stmt->execute();
+	               $nombre = $stmt->fetch(); 
+	               $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-	                        echo $nombre['nombreAlu']?>
-	                        </li></h3>
-				<h3 class="titulo"><li>Progreso del curso.</li></h3>
-				<div style="float: left; width: 50%;">
-					<?php  
-						printMeter('examen 1');
-						printMeter('examen 2');
-						printMeter('examen 3');
-						printMeter('examen 4');
-							
-					?>
-				</div>
-				<div style="float: right; width: 50%;">
-					<?php 
-						printMeter('examen 5');
-						printMeter('examen 6');
-						printMeter('examen 7');
-						printMeter('examen 8');
-					?>
-				</div>
+	               echo $nombre['nombrePro'];
 
-			</ul>
+	               $conni = mysqli_connect("localhost", "root","","IS2COMHIS");
+
+
+				   $query = "SELECT DISTINCT clase FROM Alumnos WHERE idProfe = ?";
+				   $stmt = $conni->prepare($query);
+				   $profe = getIdProfe();
+				   $stmt->bind_param("i", $profe);
+				   $stmt->execute();
+				   $result = $stmt->get_result();
+
+				   $clases = 1;
+				   while ($row = $result->fetch_assoc()) 
+				   {
+					  divClase($row['clase']);
+				   };  
+	             ?>
+
 		</div>
 
 		</section>

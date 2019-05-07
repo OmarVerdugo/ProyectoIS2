@@ -37,4 +37,20 @@
 	border-right: 2px solid #50508F;
 }
 
+
+.clasesAlu{
+	border-bottom: 2px solid #50508F;
+	width: 600px;
+}
+
+.clasesCont{
+	background-color: #50508F;
+	font-size: 15px;
+	display: block;
+	color: white;
+	padding: 20px; 
+	width: 500px;
+	
+}
+
 /*CSS Pagina de inicio*/

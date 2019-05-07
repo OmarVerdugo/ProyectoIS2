@@ -25,6 +25,7 @@ CREATE TABLE Alumnos
             emailAlu		VARCHAR(50)	NOT NULL,	
             promedio		DOUBLE,
             passAlu			VARCHAR(13)	NOT NULL,
+            clase			VARCHAR(2) NOT NULL,
             idProfe			INT,
             FOREIGN KEY(idProfe) references Profesores(idProfe)
 		);
@@ -42,7 +43,7 @@ CREATE TABLE CalifExam
 								FOREIGN KEY(idAlumno) references Alumnos(idAlumno)
 );
 INSERT INTO Profesores VALUES(	0,	'Martin', 'Agundez', NULL, '1965/07/15','M', 'aguila@uabcs.mx' , 'america' ); 
-INSERT INTO Alumnos VALUES(0, 'Francisco', 'Sanchez', 'Guerrero', '1998/02/25', 'F', 'pokemito@uabcs.mx', 0, '123456', 1);
+INSERT INTO Alumnos VALUES(0, 'Francisco', 'Sanchez', 'Guerrero', '1998/02/25', 'F', 'pokemito@uabcs.mx', 0, 'rowrow','a', 1);
 SELECT * FROM Profesores;
 SELECT * FROM Alumnos;
 SELECT * FROM CalifExam;

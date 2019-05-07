@@ -12,6 +12,7 @@
 				<h3>Apellido paterno</h3>
 				<h3>Fecha de nacimiento</h3>		
 				<h3>Correo</h3>
+				<h3>Clase</h3>
 					<form action="AlumnoRegistrado.php" method="POST">
 					<button id="Registrar" class="enviar formBoton" >Registrar</button>
 			</div>
@@ -32,8 +33,8 @@
 							</select>
 					</div>
 					<input type="email" name="_emailAlu" id="_correoAlu">
+					<input type="text" name="_clase" id="_clase" placeholder="Maximo 2 carácteres" maxlength="2">
 					<div class="formBoton">
-						<?php #<button id="Limpiar">Limpiar</button> ?>
 					</div>
 				</div>
 			</div>	

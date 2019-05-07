@@ -51,7 +51,7 @@
 		 	$calif = $stmt->fetch(); 
 
 			echo "<h3>Capitulo: ".$capitulo;
-			echo "<h3>Calificacion: ".$calif['califExam']."</h3>";
+			echo "<h3>Calificacion: ".round($calif['califExam'],1)."</h3>";
 		 ?>
 
 		</div>

@@ -74,7 +74,6 @@
 		$stmt->bindParam(':intentos', $intent);
 		$stmt->execute(); 				
 
-		echo "tu promedio es: ".$promedio;
 		header('location:resultExam.php'); 
 	}else{
 
@@ -137,7 +136,6 @@
 			$stmt->bindParam(':intentos', $intentos);
 			$stmt->execute(); 				
 
-			echo "tu promedio es: ".$promedio;
 			header('location:resultExam.php'); 
 		}else{
 			echo "<h3>Ya has realizado al maximo de intentos</h3>";

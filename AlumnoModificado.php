@@ -17,11 +17,12 @@
 			$naciAlu = $_POST['_naciAlu'];
 			$sexoAlu = $_POST['_sexoAlu'];
 			$emailAlu = $_POST['_emailAlu'];
+			$clase = $_POST['_clase'];
 
 				
 			 #	//	aplica la actualizacion en la base de datos   //
 		    $query ="UPDATE Alumnos
-					SET nombreAlu=:nombre,apePatAlu=:apepat,apeMatAlu=:apemat,naciAlu=:naci, sexoAlu=:sexo,emailAlu =:email  
+					SET nombreAlu=:nombre,apePatAlu=:apepat,apeMatAlu=:apemat,naciAlu=:naci, sexoAlu=:sexo, clase=:clase, emailAlu =:email  
 					WHERE  idAlumno = :alu";
 			$stmt = $conn->prepare($query);
 			$stmt->bindParam(':alu', $idAlu);
@@ -31,6 +32,7 @@
 			$stmt->bindParam(':naci', $naciAlu);
 			$stmt->bindParam(':sexo', $sexoAlu);
 			$stmt->bindParam(':email', $emailAlu);
+			$stmt->bindParam(':clase', $clase);
 			$stmt->execute();	
 			header('location:ModificarAlumno.php'); 
 

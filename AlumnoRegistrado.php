@@ -7,6 +7,7 @@
 		$naciAlu = $_POST['_naciAlu'];
 		$sexoAlu = $_POST['_sexoAlu'];
 		$emailAlu = $_POST['_emailAlu'];
+		$clase = $_POST['_clase'];
 
 	if ( $nombreAlu != "" or $apePatAlu != "" or $apeMatAlu != "" or $sexoAlu != "" or $emailAlu != "" ) 
 		{
@@ -32,7 +33,7 @@
 			 	$sesPro = $stmt->fetch();        
 				       	 
 				#	//	inserta el alumno en la base de datos   //
-				$query ="INSERT INTO Alumnos VALUES('0', :nombre,:apepat,:apemat,:naci,:sexo,:email,'0','default',:profe)";
+				$query ="INSERT INTO Alumnos VALUES('0', :nombre,:apepat,:apemat,:naci,:sexo,:email,'0','default', :clase, :profe)";
 				$stmt = $conn->prepare($query);
 				$stmt->bindParam(':nombre', $nombreAlu);
 				$stmt->bindParam(':apepat', $apePatAlu);
@@ -41,6 +42,7 @@
 				$stmt->bindParam(':sexo', $sexoAlu);
 				$stmt->bindParam(':email', $emailAlu);
 				$stmt->bindParam(':profe', $sesPro['idProfe']);
+				$stmt->bindParam(':clase', $clase);
 				$stmt->execute(); 				
 				header('location:registroAlumno.php'); 
 				}else
