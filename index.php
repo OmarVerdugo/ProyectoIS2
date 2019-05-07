@@ -16,6 +16,7 @@
 						</ul>
 					</div>
 				</form>
+				<div class="crear"><a href="CrearProfe.php">Registrarse (profesor) </a></div>
 		</section>
 </body>
 </html>

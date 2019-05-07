@@ -126,6 +126,18 @@ body{
 	border: 1px solid #000000;
 }
 
+.crear{
+	text-align: center;
+	background-color: #E1E1E1;
+}
+.crear a{
+	text-decoration: none;
+	color: #50508F;
+}
+.crear a:hover{
+	border-bottom: 2px solid #50508F;
+}
+
 /*******************	CSS login	*******************/
 
 
