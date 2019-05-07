@@ -61,12 +61,17 @@ Lugar:      La Paz, México
            	<ul>
            		
               <?php 
+              if (!isset($_SESSION['user'])) 
+              {
+                echo "<li><a href=\"http://localhost/ProyectoIS2/index.php#\">INICIO</a></li>";
+              }else{
                   if (esProfe()) {
                     echo "<li><a href=\"http://localhost/ProyectoIS2/startPro.php#\">INICIO</a></li>";
                   }else
                     {
                       echo "<li><a href=\"http://localhost/ProyectoIS2/startAlu.php#\">INICIO</a></li>";
-                    }
+                    } 
+                }
                ?>
              
            		<li><?php 
