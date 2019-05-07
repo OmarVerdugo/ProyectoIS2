@@ -54,6 +54,9 @@
 	max-height: 30px
 	margin-right: 50px;
 }
+.mismoFlex select{
+	min-height: 25px; 
+}
 .formBoton{
 	margin-top:	40px;
 }
@@ -124,6 +127,11 @@
 	border-style: groove;
 	border-color: #e8e8e8;
 	min-height: 400px;
+}
+
+.elim button{
+	margin: 20px auto;
+
 }
 
 /*******************	Control de alumno	*******************/

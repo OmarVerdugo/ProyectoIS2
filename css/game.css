@@ -4,6 +4,19 @@
 
 }
 
+.progreso a{
+	text-decoration: none;
+	color: #50508F;
+}
+
+.progreso a:visited{
+	text-decoration: none;
+}
+
+.progreso a:hover{
+ border-bottom: 2px solid #8DABC2;
+}
+
 .titulo {
 	margin: 0;
 	padding-top: 25px;
