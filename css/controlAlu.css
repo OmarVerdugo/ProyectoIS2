@@ -116,6 +116,14 @@
 	margin:150px 100px ;
 	padding: 50px 100px;
 }
-
+.studentContAlu{
+	padding: 15px 30px;
+	display: block;
+	background-color: white;
+	margin: 20px 50px;
+	border-style: groove;
+	border-color: #e8e8e8;
+	min-height: 400px;
+}
 
 /*******************	Control de alumno	*******************/

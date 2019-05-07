@@ -69,9 +69,31 @@ Lugar:      La Paz, México
                     }
                ?>
              
-           		<li><a href="http://localhost/ProyectoIS2/menuCapitulos.php#">CAPÍTULOS</a></li>
-           		<li><a href="http://localhost/ProyectoIS2/evaluaciones.php#">EVALUACIONES</a></li>
-           		<li><a href="http://localhost/ProyectoIS2/juegos.php#">JUEGOS</a></li>
+           		<li><?php 
+                if (isset($_SESSION['user'])) 
+                {
+                 echo "<a href=\"http://localhost/ProyectoIS2/menuCapitulos.php#\">CAPÍTULOS</a>"; 
+                }else{
+                  echo "<a href=\"#\">CAPÍTULOS</a>";
+                }?>
+              </li>
+           		<li><?php 
+                if (isset($_SESSION['user']) and getIdProfe($_SESSION['user']) == null ) 
+                {
+                 echo "<a href=\"http://localhost/ProyectoIS2/EVALUACIONES.php#\">EVALUACIONES</a>"; 
+                }else{
+                  echo "<a href=\"#\">EVALUACIONES</a>";
+                }
+               ?></li>
+           		<li><?php 
+                if (isset($_SESSION['user']) ) 
+                {
+                 echo "<a href=\"http://localhost/ProyectoIS2/Juegos.php#\">JUEGOS</a>"; 
+                }else{
+                  echo "<a href=\"#\">JUEGOS</a>";
+                }
+
+               ?></li>
            		<li><a 
                 <?php  
                  if (isset($_SESSION['user'])) 
