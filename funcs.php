@@ -1,5 +1,6 @@
 <?php 
 
+//consigue la id del alumno 
 function getIdAlumno(){
 	$db = new DB();
  	$conn = $db->getConnection();
@@ -11,7 +12,7 @@ function getIdAlumno(){
 
 	return $alu['idAlumno'];
 }
-
+//consigue la id del profesor
 function getIdProfe(){
 	$db = new DB();
  	$conn = $db->getConnection();
@@ -23,7 +24,7 @@ function getIdProfe(){
 
 	return $profe['idProfe'];
 }
-
+//consigue la calificacion de un capitulo 
 function getCalif($capitulo){
 	$db = new DB();
  	$conn = $db->getConnection();
@@ -38,11 +39,11 @@ function getCalif($capitulo){
 
 	return $cal['califExam'];
 }
-
+//imprime la calificacion de un capitulio en la pagina de inicio de los alumnos
 function printMeter($capitulo, $label){
 	echo "<li><strong>".$label ."<meter min=\"0\" max=\"100\" low=\"26\" high=\"75\" optimum=\"100\" value=\"". getCalif($capitulo)."\"></strong></li>";
 }
-
+//comfirma si el usuario es un profesor o un alumno
 function esProfe(){
 	$db = new DB();
  	$conn = $db->getConnection();
@@ -56,7 +57,7 @@ function esProfe(){
       return false;                   
     }
 }
-	
+//imprime los alumnos y sus promedios en la pagina de inicio de un profesor
 function divClase($clase){
 
 
@@ -86,7 +87,7 @@ function divClase($clase){
 		echo "<br>Promedio del grupo: ".round(	($promedio / $alumnos) , 1);
 	echo "</div>";
 }
-
+//calcula el promedio de los alumnos a partir de las calificaciones de sus examenes
 function actualPromedio($calif){
 	
 	$alu=getIdAlumno();
@@ -108,6 +109,11 @@ function actualPromedio($calif){
     $stmt->execute();
     
 
+}
+
+function mandarEmail($email)
+{
+	mail($email, "Registro en CHSys", "Has sido registrado en la CHSys!");
 }
 
 

@@ -34,6 +34,7 @@ Lugar:      La Paz, México
             <li id="login" name="loginLabel">
                 <?php 
                  session_start(); 
+                  //imprime el nombre del usuario de la sesion 
                   if (!isset($_SESSION['user'])) {
                     echo "<a href='#'> </a>";
                   }else

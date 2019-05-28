@@ -1,13 +1,15 @@
 <?php 
 	session_start();
 	include_once('db/DB.php');
-		$nombreAlu = $_POST['_nombreAlu'];
-		$apePatAlu = $_POST['_apePatAlu'];
-		$apeMatAlu = $_POST['_apeMatAlu'];
-		$naciAlu = $_POST['_naciAlu'];
-		$sexoAlu = $_POST['_sexoAlu'];
-		$emailAlu = $_POST['_emailAlu'];
-		$clase = $_POST['_clase'];
+    include('funcs.php');
+
+	$nombreAlu = $_POST['_nombreAlu'];
+	$apePatAlu = $_POST['_apePatAlu'];
+	$apeMatAlu = $_POST['_apeMatAlu'];
+	$naciAlu = $_POST['_naciAlu'];
+	$sexoAlu = $_POST['_sexoAlu'];
+	$emailAlu = $_POST['_emailAlu'];
+	$clase = $_POST['_clase'];
 
 	if ( $nombreAlu != "" or $apePatAlu != "" or $apeMatAlu != "" or $sexoAlu != "" or $emailAlu != "" ) 
 		{
@@ -43,7 +45,8 @@
 				$stmt->bindParam(':email', $emailAlu);
 				$stmt->bindParam(':profe', $sesPro['idProfe']);
 				$stmt->bindParam(':clase', $clase);
-				$stmt->execute(); 				
+				$stmt->execute(); 	
+				mandarEmail($emailAlu);			
 				header('location:registroAlumno.php'); 
 				}else
 					{
